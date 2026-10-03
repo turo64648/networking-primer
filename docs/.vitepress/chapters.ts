@@ -83,7 +83,7 @@ export const parts: Part[] = [
         topics: ['Terminating TLS and HTTP at the edge', 'Routing, health checks and outlier detection', 'Rate limiting, bots and L7 DDoS', 'Long-lived connections during deploys', 'Common proxies: Envoy, NGINX, HAProxy'],
       },
       {
-        id: 'cdns', num: '13', title: 'CDNs', link: '/edge/cdns', ready: false,
+        id: 'cdns', num: '13', title: 'CDNs', link: '/edge/cdns', ready: true,
         topics: ['What a CDN caches and why it helps', 'Cache keys and hit ratio', 'Tiered caching and origin shield', 'Purging and serving stale content', 'Dynamic content through a CDN'],
       },
     ],
