@@ -590,7 +590,7 @@ curl --http1.1 -sv https://example.com/ -o /dev/null        # force HTTP/1.1 to 
 ## Where it breaks
 
 **Steam, 2015: personal pages cached for strangers.** On 25 December 2015, Steam's store was under a
-<Term id="ddos">denial-of-service</Term> attack. Its web caching partner deployed caching rules to absorb the
+denial-of-service attack. Its web caching partner deployed caching rules to absorb the
 load. One rule wrongly cached pages for logged-in users. For about 90 minutes, some users saw store pages
 generated for other users, including billing addresses and purchase history; Valve said about 34,000 users
 were affected. **Lesson:** caching personal responses must be impossible by default, not merely unconfigured.
