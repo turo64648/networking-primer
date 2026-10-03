@@ -79,7 +79,7 @@ export const parts: Part[] = [
         topics: ['ECMP and why it is not enough', 'Consistent hashing and Maglev-style tables', 'Direct server return and the return path', 'QUIC and connection-ID-aware balancing', 'Connection draining and deploys'],
       },
       {
-        id: 'l7-proxies', num: '12', title: 'L7 Proxies', link: '/edge/l7-proxies', ready: false,
+        id: 'l7-proxies', num: '12', title: 'L7 Proxies', link: '/edge/l7-proxies', ready: true,
         topics: ['Terminating TLS and HTTP at the edge', 'Routing, health checks and outlier detection', 'Rate limiting, bots and L7 DDoS', 'Long-lived connections during deploys', 'Common proxies: Envoy, NGINX, HAProxy'],
       },
       {
