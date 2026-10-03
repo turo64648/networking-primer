@@ -235,8 +235,8 @@ The TTL is a request, not a guarantee. Some layers keep answers longer:
 - Some resolvers <Term id="serve-stale">serve stale</Term> answers: if the authoritative servers cannot be
   reached when a record expires, they keep using the old answer instead of failing. This is a deliberate
   resilience feature, and it means a "dead" address can live on during an outage.
-- Some app runtimes cache for a long time. Older Java versions, for example, could cache lookups forever
-  when a security manager was installed. Check the defaults of the runtime and HTTP client you use.
+- Some app runtimes cache for a long time. Java, for example, caches lookups forever when a security
+  manager is installed, a common setup in older deployments. Check the defaults of the runtime and HTTP client you use.
 
 <DnsTtlTimelineDiagram />
 
@@ -403,7 +403,7 @@ so and the client asks again over TCP. Networks that block DNS over TCP break la
 A DNS question and its answer usually fit in a single UDP message each. There is no connection to set up, so
 a lookup costs one round trip. Resolvers send a very large number of these, so this low cost matters.
 
-The original protocol limited UDP answers to 512 bytes. <Term id="edns">EDNS</Term> lets a client say
+The original protocol limited UDP answers to 512 bytes. EDNS lets a client say
 "I can accept bigger answers", and today most do. But big UDP messages may be split into IP fragments, and
 many networks drop fragments. So large answers can vanish without any error.
 
@@ -478,7 +478,7 @@ operators.
 Classic DNS travels unencrypted over UDP port 53. Anyone on the path can see every name you look up: the
 Wi-Fi operator, the ISP, a government. They can also block names or change answers.
 
-Two standards wrap DNS in <Term id="tls">TLS</Term> encryption:
+Two standards wrap DNS in TLS encryption:
 
 - <Term id="dot">DNS over TLS (DoT)</Term> uses a dedicated port, 853. Android's "Private DNS" setting,
   added in Android 9 (2018), uses it.
@@ -619,9 +619,9 @@ health check that can withdraw every instance at once is a single point of failu
 ([Facebook engineering, 2021](https://engineering.fb.com/2021/10/05/networking-traffic/outage-details/))
 
 **Slack, 2021: a DNSSEC rollback that cached badly.** On 30 September 2021, Slack enabled DNSSEC on
-`slack.com`, saw some failures, and rolled back by removing its keys. But validating resolvers had already
-cached the DS record from `.com`, which lasts 24 hours. They still expected signatures, found none, and
-returned `SERVFAIL`. Some users could not reach Slack for hours, until caches were flushed or expired.
+`slack.com`, saw some failures, and rolled back: it removed the DS record from `.com`, then its keys. But
+validating resolvers had already cached the DS record, which `.com` serves with a 24-hour TTL. They still
+expected signatures, found none, and returned `SERVFAIL`. Some users could not reach Slack for hours, until caches were flushed or expired.
 **Lesson:** a parent's TTL controls how fast you can undo a change, and you do not set it.
 ([Slack engineering, 2021](https://slack.engineering/what-happened-during-slacks-dnssec-rollout/))
 
