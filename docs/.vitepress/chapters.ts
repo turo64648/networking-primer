@@ -45,7 +45,7 @@ export const parts: Part[] = [
         topics: ['The TLS 1.3 handshake and its round trips', 'Session resumption, 0-RTT and replay', 'Certificates, chains and validation', 'Certificate operations: ACME, rotation, expiry', 'SNI, ECH and terminating TLS at the edge'],
       },
       {
-        id: 'http', num: '6', title: 'HTTP', link: '/protocols/http', ready: false,
+        id: 'http', num: '6', title: 'HTTP', link: '/protocols/http', ready: true,
         topics: ['Semantics: methods, status codes, idempotency', 'Caching headers: Cache-Control, ETag, Vary', 'HTTP/1.1 vs HTTP/2 multiplexing', 'Connection reuse and keep-alive', 'Long-lived connections: WebSockets, gRPC streams'],
       },
       {

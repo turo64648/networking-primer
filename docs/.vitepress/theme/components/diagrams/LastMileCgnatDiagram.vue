@@ -21,14 +21,16 @@ const subs = [
         <text x="85" :y="s.y + 26" text-anchor="middle" class="tb">{{ s.name }}</text>
         <text x="85" :y="s.y + 47" text-anchor="middle" class="m">{{ s.addr }}</text>
         <path :d="`M160 ${s.y + 33} L248 153`" class="ln" marker-end="url(#lmcg-ah)" />
-        <text x="345" :y="s.y === 30 ? 52 : s.y === 120 ? 214 : 246" text-anchor="middle" class="m">{{ s.name }}: {{ s.ports }}</text>
       </template>
 
       <!-- CGNAT -->
-      <rect x="250" y="110" width="190" height="86" rx="8" class="box-b" />
-      <text x="345" y="138" text-anchor="middle" class="tb">Carrier-grade NAT</text>
-      <text x="345" y="158" text-anchor="middle" class="m">rewrites every phone to</text>
-      <text x="345" y="176" text-anchor="middle" class="m">one public address</text>
+      <rect x="250" y="80" width="190" height="150" rx="8" class="box-b" />
+      <text x="345" y="106" text-anchor="middle" class="tb">Carrier-grade NAT</text>
+      <text x="345" y="126" text-anchor="middle" class="m">one public address,</text>
+      <text x="345" y="144" text-anchor="middle" class="m">a port block per phone:</text>
+      <template v-for="(s, i) in subs" :key="'p' + s.name">
+        <text x="345" :y="170 + i * 20" text-anchor="middle" class="m">{{ s.name.slice(-1) }}: {{ s.ports }}</text>
+      </template>
 
       <!-- server -->
       <rect x="490" y="110" width="140" height="86" rx="8" class="box-d" />

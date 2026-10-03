@@ -205,7 +205,7 @@ the server has contributed any.
 So 0-RTT is safe only for requests that do no harm when repeated. Fetching a page or an image is fine. A
 request that sends money, places an order or changes state is not. In HTTP terms, the request must be
 **idempotent**, meaning that doing it twice has the same effect as doing it once, and ideally free of side
-effects; [chapter 6](/protocols/http) explains idempotent methods.
+effects; [chapter 6](/protocols/http#methods-and-idempotency) explains idempotent methods.
 
 In practice, servers and CDNs that accept 0-RTT usually allow it only for safe methods such as `GET`, and
 many do not enable it at all. A proxy that receives early data and forwards it to an origin marks the request,
