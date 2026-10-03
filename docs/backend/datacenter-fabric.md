@@ -109,7 +109,7 @@ third of that traffic would fit. That ratio, 3:1 here, is called
 Oversubscription is a bet that servers do not all send off-rack at full speed at the same time. For most web
 workloads, the bet holds: traffic is bursty, and much of it is small requests. It saves a lot of money,
 because spines and optics are a large share of a fabric's cost. Ratios around 2:1 to 4:1 at the rack are
-common published figures; Facebook's 2014 fabric started at 4:1 between racks, with room to grow to 1:1.
+common; Facebook's 2014 fabric started at 4:1 between racks, with room to grow to 1:1.
 
 When the bet fails, packets queue at the uplinks and then drop. Some workloads break it on purpose:
 
@@ -206,8 +206,7 @@ protocol such as OSPF or IS-IS: every router floods a description of its links t
 computes the full map.
 
 At datacenter scale, many operators use <Term id="bgp">BGP</Term> instead, the protocol networks use to
-exchange routes across the internet. RFC 7938 (2016), written by engineers from Facebook, Microsoft and
-Arista, describes the pattern:
+exchange routes across the internet. RFC 7938 (2016) describes the pattern:
 
 - **Only external BGP, on every link.** Each leaf runs a BGP session with each spine it connects to. There is
   no second protocol.
