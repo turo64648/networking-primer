@@ -122,7 +122,7 @@ export const parts: Part[] = [
     title: 'Capstone & Appendix',
     chapters: [
       {
-        id: 'what-happens-when', num: 'C', title: 'What Happens When…', link: '/extras/what-happens-when', ready: false,
+        id: 'what-happens-when', num: 'C', title: 'What Happens When…', link: '/extras/what-happens-when', ready: true,
         topics: ['…you open a URL on your phone (cold)', '…the connection is already warm', '…the CDN has it, and when it does not', '…a region fails', '…a deploy happens mid-request'],
       },
       {
