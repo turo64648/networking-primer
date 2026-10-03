@@ -75,7 +75,7 @@ export const parts: Part[] = [
         topics: ['DNS-based vs anycast vs client-side steering', 'Measuring users: RUM-based mapping', 'Health checks and regional failover', 'Capacity-aware steering and evacuation', 'Failure modes of each approach'],
       },
       {
-        id: 'l4-load-balancing', num: '11', title: 'L4 Load Balancing', link: '/edge/l4-load-balancing', ready: false,
+        id: 'l4-load-balancing', num: '11', title: 'L4 Load Balancing', link: '/edge/l4-load-balancing', ready: true,
         topics: ['ECMP and why it is not enough', 'Consistent hashing and Maglev-style tables', 'Direct server return and the return path', 'QUIC and connection-ID-aware balancing', 'Connection draining and deploys'],
       },
       {
