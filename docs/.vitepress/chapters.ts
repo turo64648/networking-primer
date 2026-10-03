@@ -20,7 +20,7 @@ export const parts: Part[] = [
     title: 'I. Foundations',
     chapters: [
       {
-        id: 'the-map', num: '1', title: 'The Map: One Request, End to End', link: '/foundations/the-map', ready: false,
+        id: 'the-map', num: '1', title: 'The Map: One Request, End to End', link: '/foundations/the-map', ready: true,
         topics: ['Every hop from phone to first app server, and who owns it', 'Cold vs warm requests', 'A latency budget in orders of magnitude', 'Why distance and round trips dominate', 'How the rest of the book follows the path'],
       },
       {

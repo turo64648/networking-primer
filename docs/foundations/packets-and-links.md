@@ -334,7 +334,7 @@ The symptoms are distinctive, and worth memorising for debugging interviews:
 
 ### The fixes: MSS clamping and probing
 
-TCP announces the largest segment it accepts in its first packet, the **maximum segment size (MSS)**:
+TCP announces the largest segment it accepts in its first packet, the <Term id="mss">maximum segment size (MSS)</Term>:
 normally the MTU minus 40 bytes of IPv4 and TCP headers, so 1,460. A router at a tunnel entrance can rewrite
 that value downward in passing connections, so neither end ever sends a packet too big for the tunnel. This
 is <Term id="mss-clamping">MSS clamping</Term>, and almost every home router, VPN gateway and cloud VPN does
