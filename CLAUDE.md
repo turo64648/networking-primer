@@ -13,8 +13,7 @@ website. Sibling of the OS Primer (https://turo64648.github.io/os-primer/). Depl
 - Flashcards for a chapter live next to it (e.g. `docs/protocols/dns-review.ts`, exporting `cards`).
 - Components in `docs/.vitepress/theme/components/` and `components/diagrams/` register themselves by file
   name. Do not edit `theme/index.ts`.
-- The reference chapter for tone and structure is `docs/protocols/dns.md` (until it exists, the OS Primer's
-  `docs/memory/virtual-memory.md`).
+- The reference chapter for tone and structure is `docs/protocols/dns.md`.
 - Out of scope: storage, consensus, replication, and fan-out beyond the first application server.
 - Check with `npm run build` before pushing; it fails on dead links.
 
@@ -41,8 +40,14 @@ website. Sibling of the OS Primer (https://turo64648.github.io/os-primer/). Depl
 7. Widgets are optional. Only add one if interacting with it teaches something the text cannot.
 8. Links to chapters that are not written yet are fine; `chapters.ts` has all paths. Link to the OS Primer
    with absolute URLs.
-9. Length follows scope. There is no word target. Do not repeat what another chapter (here or in the OS
-   Primer) explains in full; recap it in a sentence and link.
+9. Length follows importance and complexity. There is no word target, but be judicious: for each detail, ask
+   whether senior or infra interviewers commonly discuss it, or whether it explains real production
+   behaviour. If it is deep internals that rarely come up, cut it or keep it to a sentence in "Going deeper".
+   Do not repeat what another chapter (here or in the OS Primer) explains in full; recap it and link.
+10. Be economical with tokens and tool calls everywhere except the writing itself. Read only the files
+   listed in your task. Do not explore the repo. Fetch from the web only to confirm a specific fact or get
+   a Sources link, and stop once you have it. `dig` is not installed on the build machine; illustrative
+   command output is fine if labelled as such.
 
 ### Glossary file format
 
