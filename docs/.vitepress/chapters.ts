@@ -71,7 +71,7 @@ export const parts: Part[] = [
     title: 'IV. The Edge',
     chapters: [
       {
-        id: 'steering', num: '10', title: 'Steering Users & Failing Over', link: '/edge/steering', ready: false,
+        id: 'steering', num: '10', title: 'Steering Users & Failing Over', link: '/edge/steering', ready: true,
         topics: ['DNS-based vs anycast vs client-side steering', 'Measuring users: RUM-based mapping', 'Health checks and regional failover', 'Capacity-aware steering and evacuation', 'Failure modes of each approach'],
       },
       {
