@@ -41,7 +41,7 @@ export const parts: Part[] = [
         topics: ['Stub, recursive and authoritative resolvers', 'Caching, TTLs and negative caching', 'EDNS Client Subnet and location-aware answers', 'HTTPS / SVCB records', 'DNS over HTTPS and TLS'],
       },
       {
-        id: 'tls', num: '5', title: 'TLS', link: '/protocols/tls', ready: false,
+        id: 'tls', num: '5', title: 'TLS', link: '/protocols/tls', ready: true,
         topics: ['The TLS 1.3 handshake and its round trips', 'Session resumption, 0-RTT and replay', 'Certificates, chains and validation', 'Certificate operations: ACME, rotation, expiry', 'SNI, ECH and terminating TLS at the edge'],
       },
       {

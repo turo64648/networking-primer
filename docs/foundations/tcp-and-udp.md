@@ -120,7 +120,7 @@ It saw little deployment, for reasons worth knowing:
 
 - **Middleboxes broke it.** Firewalls and NAT devices dropped SYNs that carried data or the unknown option.
   The client then had to retry without TFO, which cost more time than TFO saved. Google's early measurements
-  (2011) found that a few percent of paths dropped such SYNs.
+  (2011) found that about 5% of paths dropped such SYNs.
 - **Browsers turned it off.** As of 2019, Chrome, Firefox and Edge all had it disabled by default.
 - **The cookie can track users**, since it survives across sessions and networks.
 - **Data in the SYN can be replayed**, so the server must only accept requests that are safe to repeat.
