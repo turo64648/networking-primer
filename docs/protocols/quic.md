@@ -311,8 +311,7 @@ wait seconds. So clients race:
 - Remember failures. If QUIC fails on this network, mark it broken for a while and go straight to TCP.
 
 This is the same idea as <Term id="happy-eyeballs">Happy Eyeballs</Term>, which races IPv6 against IPv4.
-[Chapter 8](/internet/last-mile) covers it; newer versions of the Happy Eyeballs guidance include QUIC in the
-race.
+[Chapter 8](/internet/last-mile) covers it; an IETF draft of Happy Eyeballs version 3 adds QUIC to the race.
 
 ### Where UDP does not work
 

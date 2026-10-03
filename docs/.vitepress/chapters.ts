@@ -58,7 +58,7 @@ export const parts: Part[] = [
     title: 'III. Reaching the Internet',
     chapters: [
       {
-        id: 'last-mile', num: '8', title: 'The Last Mile & Mobile', link: '/internet/last-mile', ready: false,
+        id: 'last-mile', num: '8', title: 'The Last Mile & Mobile', link: '/internet/last-mile', ready: true,
         topics: ['Wi-Fi and cellular: where the latency comes from', 'Radio states and the slow first request', 'NAT and carrier-grade NAT', 'IPv6-only mobile networks: NAT64, 464XLAT', 'Happy Eyeballs and network switches'],
       },
       {
