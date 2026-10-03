@@ -30,7 +30,7 @@ The chapter makes sense without them. Addresses and names in the examples are pl
 server holds it all.
 
 People and apps use names like `www.example.com`. Networks deliver packets to IP addresses. Something has
-to connect the two, and the answer must be able to change: a site moves to a new server, adds a second
+to connect the two. And the answer must be able to change: a site moves to a new server, adds a second
 region, or sends users to a server near them.
 
 DNS stores small pieces of data under names. Each piece is a <Term id="dns-record">record</Term>, and each
@@ -236,7 +236,8 @@ The TTL is a request, not a guarantee. Some layers keep answers longer:
   reached when a record expires, they keep using the old answer instead of failing. This is a deliberate
   resilience feature, and it means a "dead" address can live on during an outage.
 - Some app runtimes cache for a long time. Java, for example, caches lookups forever when a security
-  manager is installed, a common setup in older deployments. Check the defaults of the runtime and HTTP client you use.
+  manager is installed, a common setup in older deployments. Check the defaults of the runtime and HTTP
+  client you use.
 
 <DnsTtlTimelineDiagram />
 
