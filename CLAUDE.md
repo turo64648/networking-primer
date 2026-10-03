@@ -48,6 +48,20 @@ website. Sibling of the OS Primer (https://turo64648.github.io/os-primer/). Depl
    listed in your task. Do not explore the repo. Fetch from the web only to confirm a specific fact or get
    a Sources link, and stop once you have it. `dig` is not installed on the build machine; illustrative
    command output is fine if labelled as such.
+11. Keep the number of steps (model turns) low; every step re-reads your whole context. Batch independent
+   reads into one step. Do at most ~5 web lookups, batched where possible. Write the chapter in one Write
+   call, not in pieces. Write the review file, the glossary file and all diagrams together in one step.
+   Do not re-read files you wrote. Aim for about 10–12 steps in total.
+
+### Standard reading list for a chapter writer
+
+Read these, and nothing else, unless your task says otherwise:
+- `CLAUDE.md`, `STYLE.md`, `docs/.vitepress/chapters.ts`
+- `docs/protocols/dns.md` and `docs/protocols/dns-review.ts` (reference for tone and structure)
+- `docs/.vitepress/theme/components/diagrams/DnsResolutionDiagram.vue` (diagram template)
+- Existing glossary ids, without reading the files:
+  `grep -ohE "^  '?[a-z0-9-]+'?:" docs/*/*-glossary.ts | tr -d " ':" | sort | tr '\n' ' '`
+- For chapters you build on, only their headings and "In short" lines: `grep -n '^## \|In short' <file>`
 
 ### Glossary file format
 
