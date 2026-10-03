@@ -113,7 +113,7 @@ export const parts: Part[] = [
         topics: ['Timeouts and deadline propagation', 'Retries, backoff, jitter and retry budgets', 'Hedged requests', 'Load shedding and circuit breaking', 'Retry storms and metastable failures'],
       },
       {
-        id: 'observing-the-path', num: '18', title: 'Observing & Debugging the Path', link: '/operations/observing-the-path', ready: false,
+        id: 'observing-the-path', num: '18', title: 'Observing & Debugging the Path', link: '/operations/observing-the-path', ready: true,
         topics: ['Real-user monitoring vs synthetic probes', 'Tracing across hops: traceparent, Server-Timing', 'dig, curl -w, mtr, tcpdump: a method', 'What traceroute does and does not tell you', 'Worked debugging scenarios'],
       },
     ],

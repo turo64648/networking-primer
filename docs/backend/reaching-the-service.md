@@ -327,8 +327,8 @@ time. There is no central balancer to monitor, and no extra hop. Second, it is p
 per connection. The gRPC problem from earlier applies in full: one long-lived connection to a ClusterIP
 pins to one pod.
 
-For gRPC inside a cluster, the usual answer is a **headless Service**: one with no ClusterIP. Its
-<Term id="headless-service">DNS name returns the pod addresses themselves</Term>, so a client-side
+For gRPC inside a cluster, the usual answer is a <Term id="headless-service">headless Service</Term>: one
+with no ClusterIP. Its DNS name returns the pod addresses themselves, so a client-side
 balancer can connect to all of them. Remember the DNS caveats: the client must re-resolve to see new pods.
 
 ### kube-proxy modes: iptables, IPVS, nftables
