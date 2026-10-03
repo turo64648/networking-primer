@@ -37,7 +37,7 @@ export const parts: Part[] = [
     title: 'II. Protocols the Client Speaks',
     chapters: [
       {
-        id: 'dns', num: '4', title: 'DNS', link: '/protocols/dns', ready: false,
+        id: 'dns', num: '4', title: 'DNS', link: '/protocols/dns', ready: true,
         topics: ['Stub, recursive and authoritative resolvers', 'Caching, TTLs and negative caching', 'EDNS Client Subnet and location-aware answers', 'HTTPS / SVCB records', 'DNS over HTTPS and TLS'],
       },
       {
