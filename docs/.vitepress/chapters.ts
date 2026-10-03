@@ -49,7 +49,7 @@ export const parts: Part[] = [
         topics: ['Semantics: methods, status codes, idempotency', 'Caching headers: Cache-Control, ETag, Vary', 'HTTP/1.1 vs HTTP/2 multiplexing', 'Connection reuse and keep-alive', 'Long-lived connections: WebSockets, gRPC streams'],
       },
       {
-        id: 'quic', num: '7', title: 'QUIC & HTTP/3', link: '/protocols/quic', ready: false,
+        id: 'quic', num: '7', title: 'QUIC & HTTP/3', link: '/protocols/quic', ready: true,
         topics: ['Why QUIC runs over UDP', 'Combined transport and TLS handshake', 'Streams without head-of-line blocking', 'Connection IDs and migration', 'Discovery (Alt-Svc, HTTPS records) and fallback when UDP is blocked'],
       },
     ],
