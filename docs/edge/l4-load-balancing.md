@@ -42,7 +42,7 @@ Large sites put this tier in front of their [L7 proxies](/edge/l7-proxies), whic
 HTTP requests. The split exists for good reasons:
 
 - **Cost per packet.** An L4 balancer does a hash and a table lookup per packet. It holds no TLS keys and no
-  buffers. One machine can push packets at line rate on a fast network card.
+  buffers. One machine can keep up with a fast network card.
 - **Any protocol.** TCP, UDP and QUIC all have addresses and ports, so one tier fronts them all.
 - **Freedom behind it.** The L7 fleet can grow, shrink and be redeployed behind a VIP that never changes.
 - **The client's address survives.** Backends see the real client IP, which logging, rate limits and abuse
@@ -93,7 +93,7 @@ pick the same backend for the same flow**. Then it does not matter which balance
   but a change still moves a large share of them.
 - Some switches offer **resilient** or "sticky" hashing. They keep a table of buckets and refill only the
   failed path's buckets, so other flows stay put. Support and limits vary by vendor and hardware.
-- ICMP error messages carry only addresses, not the original ports, in their outer header. ECMP may send them
+- <Term id="icmp">ICMP</Term> error messages carry only addresses, not the original ports, in their outer header. ECMP may send them
   to a different machine from the one holding the flow. That matters for path MTU discovery (see "Where it
   breaks").
 :::
@@ -186,7 +186,7 @@ break.
   and a step size (skip). Because M is prime, stepping by any skip visits every slot.
 - Weights are supported by letting heavier backends claim slots more often.
 - The paper chooses M much larger than the number of backends (it evaluates M = 65,537) so that every
-  backend's share is close to equal. A rebuild takes milliseconds and happens on every backend change.
+  backend's share is close to equal. The table is rebuilt on every backend change.
 - Maglev deliberately trades a little extra movement for even balance. The extra flows that move are
   protected by connection tracking, covered next.
 :::
@@ -343,8 +343,8 @@ then read the backend from the ID, with no shared table. The IETF draft for this
 servers share, so outsiders see random bytes. Packets with unreadable IDs fall back to four-tuple hashing.
 
 ::: details Going deeper: the QUIC-LB draft
-- The draft is draft-ietf-quic-load-balancers. Revision 21 was published in August 2025, and as of late 2025
-  it was still an Internet-Draft, not an RFC.
+- The draft is draft-ietf-quic-load-balancers. Its latest revision, 21, dates from August 2025. As of 2026
+  it is an expired Internet-Draft, not an RFC, so check its status before relying on it.
 - The first byte of a routable ID holds three **config rotation** bits, so balancers and servers can switch to
   a new key or format gradually. The remaining bits can encode the ID's length, because short-header QUIC
   packets do not carry it and a balancer must know where the ID ends.
@@ -359,7 +359,8 @@ servers share, so outsiders see random bytes. Packets with unreadable IDs fall b
 **In short:** the balancer's control plane probes every backend and removes the ones that fail. The hard
 parts are deciding what "failed" means, and not removing too much at once.
 
-A balancer must stop sending new flows to a dead backend. Its control plane does this by probing each backend
+A balancer must stop sending new flows to a dead backend. Its management software, the **control plane**,
+does this by probing each backend
 regularly: open a TCP connection, or fetch a status URL over HTTP. A backend that fails several probes in a
 row is removed from the table, and one that passes several in a row is added back. Requiring several results
 stops a single lost probe from flapping a server in and out.
@@ -434,7 +435,8 @@ reconnect.
   of 300 seconds (as of 2025).
 - A backend restarting on the same machine can also hand its listening socket to the new process, so the
   kernel keeps accepting connections during the switch. The
-  [OS Primer, ch. 15](https://turo64648.github.io/os-primer/io/networking) covers socket-level details.
+  [OS Primer, ch. 15](https://turo64648.github.io/os-primer/io/networking) covers sockets and the accept
+  queue.
 :::
 
 ## Why this matters in real systems
@@ -478,7 +480,7 @@ connection syncing, planned maintenance also disrupted connections. Git cannot r
 
 **Cloudflare, 2015: ECMP sent ICMP to the wrong server.** After a network change, ECMP routed ICMP "packet too
 big" messages by address only, so they often reached a different server from the one holding the TCP flow.
-Path MTU discovery broke, and users behind tunnels with smaller MTUs saw connections hang. Cloudflare's fix
+Path MTU discovery broke, and users on IPv6 tunnels, which have smaller MTUs, saw connections fail. Cloudflare's fix
 broadcast these ICMP messages to all servers in the site. **Lesson:** anything that spreads flows must also
 route the error messages about those flows.
 ([Cloudflare, 2015](https://blog.cloudflare.com/path-mtu-discovery-in-practice/))
@@ -643,4 +645,4 @@ measured server load.
 - [GLB: GitHub's open source load balancer](https://github.blog/2018-08-08-glb-director-open-source-load-balancer/) (engineering blog, 2018)
 - [Unimog: Cloudflare's edge load balancer](https://blog.cloudflare.com/unimog-cloudflares-edge-load-balancer/) (engineering blog, 2020)
 - [Path MTU discovery in practice](https://blog.cloudflare.com/path-mtu-discovery-in-practice/) (engineering blog, 2015)
-- [Summary of the Amazon DynamoDB service disruption in the Northern Virginia (US-EAST-1) Region](https://aws.amazon.com/message/101925/) (incident report, 2025)
+- [AWS post-event summary: October 2025 disruption in US-EAST-1](https://aws.amazon.com/message/101925/) (incident report, 2025)
