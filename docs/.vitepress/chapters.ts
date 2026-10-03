@@ -28,7 +28,7 @@ export const parts: Part[] = [
         topics: ['Frames, ARP / NDP and the default gateway', 'IP addresses, CIDR and longest-prefix match', 'MTU, fragmentation, PMTUD black holes, MSS clamping', 'IPv6 and why it matters on mobile', 'Encapsulation: headers inside headers'],
       },
       {
-        id: 'tcp-and-udp', num: '3', title: 'TCP & UDP as Protocols', link: '/foundations/tcp-and-udp', ready: false,
+        id: 'tcp-and-udp', num: '3', title: 'TCP & UDP as Protocols', link: '/foundations/tcp-and-udp', ready: true,
         topics: ['Reliability: sequence numbers, ACKs, loss recovery', 'Flow control vs congestion control', 'Slow start, CUBIC and BBR', 'Head-of-line blocking', 'Why some protocols build on UDP'],
       },
     ],
