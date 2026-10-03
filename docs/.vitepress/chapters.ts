@@ -24,7 +24,7 @@ export const parts: Part[] = [
         topics: ['Every hop from phone to first app server, and who owns it', 'Cold vs warm requests', 'A latency budget in orders of magnitude', 'Why distance and round trips dominate', 'How the rest of the book follows the path'],
       },
       {
-        id: 'packets-and-links', num: '2', title: 'Packets & Links', link: '/foundations/packets-and-links', ready: false,
+        id: 'packets-and-links', num: '2', title: 'Packets & Links', link: '/foundations/packets-and-links', ready: true,
         topics: ['Frames, ARP / NDP and the default gateway', 'IP addresses, CIDR and longest-prefix match', 'MTU, fragmentation, PMTUD black holes, MSS clamping', 'IPv6 and why it matters on mobile', 'Encapsulation: headers inside headers'],
       },
       {

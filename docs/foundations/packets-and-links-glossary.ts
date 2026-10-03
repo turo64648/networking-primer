@@ -106,9 +106,4 @@ export const terms: Record<string, GlossaryEntry> = {
   },
 
   // Brief entry for a term explained in full by a later chapter.
-  nat: {
-    term: 'NAT (network address translation)',
-    def: 'A gateway rewriting addresses and ports so that many devices with private addresses share one or a few public addresses.',
-    chapter: '/internet/last-mile',
-  },
 }
