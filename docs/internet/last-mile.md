@@ -9,9 +9,8 @@ import { cards } from './last-mile-review'
 # 8. The Last Mile & Mobile
 
 The first hop, from the phone over Wi-Fi or a cell tower into its provider's network, is often the slowest and
-least predictable part of the whole path. It also decides which IP address your servers see, and how many
-other users share it. Interviewers probe it through mobile performance, rate limiting, IPv6 and "it only
-fails on cellular" debugging stories.
+least predictable part of the path, and it decides which IP address your servers see. Interviewers probe it
+through mobile performance, rate limiting, IPv6 and "it only fails on cellular" debugging stories.
 
 ::: info Before you start
 - Devices on a home or office network usually have **private addresses**, rewritten to a public address at
@@ -134,7 +133,7 @@ drops back to idle. The tail costs battery for no data.
 ::: details Going deeper: the numbers and their sources
 - 3G's idle-to-connected promotion could take up to two seconds and tens of control messages; LTE's target
   was 100 ms or less, and 50 ms for LTE-Advanced (Grigorik, *High Performance Browser Networking*).
-- Huang et al. (MobiSys 2012) measured a US LTE network in 2011–2012: promotion about 260 ms, tail timer
+- Huang et al. (MobiSys 2012) measured a US LTE network: promotion about 260 ms, tail timer
   about 11.6 s, and LTE up to 23 times less power-efficient than Wi-Fi for real traces, largely due to the tail.
 - 3GPP Release 15 (5G) added the RRC_INACTIVE state, which keeps the phone's context in the network so it can
   resume faster than from full idle.
