@@ -20,7 +20,7 @@ const ticks = [0, 10, 20, 30, 40]
 
       <!-- path capacity -->
       <path :d="`M60 ${y(30)} L630 ${y(30)}`" class="ln" stroke-dasharray="5 5" />
-      <text x="626" :y="y(30) - 8" text-anchor="end" class="m">what the path can carry</text>
+      <text x="626" :y="y(30) + 16" text-anchor="end" class="m">path capacity</text>
 
       <!-- the window -->
       <polyline :points="points" class="ln" fill="none" stroke-width="3" />

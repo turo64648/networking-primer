@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // A cold HTTPS request over TCP + TLS 1.3: three round trips before the first byte of the response.
-const PHONE = 230
-const SERVER = 470
+const PHONE = 250
+const SERVER = 440
 const fromPhone = [
   { y: 70, label: 'SYN: “let’s talk”' },
   { y: 170, label: 'ACK + TLS hello' },
@@ -37,8 +37,8 @@ const fromServer = [
         <text :x="SERVER + 10" :y="m.y + 4" class="m">{{ m.label }}</text>
       </template>
 
-      <text x="350" y="174" text-anchor="middle" class="t">1 round trip</text>
-      <text x="350" y="274" text-anchor="middle" class="t">2 round trips</text>
+      <text x="345" y="174" text-anchor="middle" class="t">1 round trip</text>
+      <text x="345" y="274" text-anchor="middle" class="t">2 round trips</text>
       <text :x="PHONE - 10" y="374" text-anchor="end" class="tb">3 round trips:</text>
       <text :x="PHONE - 10" y="392" text-anchor="end" class="m">first byte of the page</text>
     </svg>
