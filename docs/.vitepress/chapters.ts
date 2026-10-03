@@ -109,7 +109,7 @@ export const parts: Part[] = [
     title: 'VI. Operating the Path',
     chapters: [
       {
-        id: 'timeouts-retries-overload', num: '17', title: 'Timeouts, Retries & Overload', link: '/operations/timeouts-retries-overload', ready: false,
+        id: 'timeouts-retries-overload', num: '17', title: 'Timeouts, Retries & Overload', link: '/operations/timeouts-retries-overload', ready: true,
         topics: ['Timeouts and deadline propagation', 'Retries, backoff, jitter and retry budgets', 'Hedged requests', 'Load shedding and circuit breaking', 'Retry storms and metastable failures'],
       },
       {
