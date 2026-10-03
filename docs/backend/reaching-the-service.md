@@ -271,8 +271,8 @@ Because of these costs, newer designs move the proxy out of each instance:
 - **No mesh.** A good RPC library plus a central layer-7 proxy at a few choke points covers many companies.
 
 ::: details Going deeper: one large-scale example
-Meta's ServiceRouter paper (OSDI 2023) describes a mesh serving a very large fleet in which most traffic
-goes through a routing library embedded in each service, rather than sidecars. Sidecar and remote proxies
+Meta's ServiceRouter paper (OSDI 2023) describes a mesh serving a very large fleet in which about 99% of
+calls go through a routing library embedded in each service, rather than sidecars. Sidecar and remote proxies
 are kept for services that cannot use the library. The paper's argument is cost: at that scale, a proxy per
 instance would use a large amount of hardware. It is one company's design at one point in time, not a rule.
 :::

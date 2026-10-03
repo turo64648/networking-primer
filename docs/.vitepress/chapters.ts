@@ -100,7 +100,7 @@ export const parts: Part[] = [
         topics: ['Clos (leaf-spine) topologies', 'BGP inside the datacenter', 'ECMP, hashing and elephant flows', 'Overlays: VXLAN', 'MTU and encapsulation overhead'],
       },
       {
-        id: 'reaching-the-service', num: '16', title: 'Reaching the Service', link: '/backend/reaching-the-service', ready: false,
+        id: 'reaching-the-service', num: '16', title: 'Reaching the Service', link: '/backend/reaching-the-service', ready: true,
         topics: ['Virtual IPs and internal load balancing', 'Service discovery', 'Sidecars and service meshes', 'Kubernetes service routing', 'Handoff to the server’s kernel'],
       },
     ],
