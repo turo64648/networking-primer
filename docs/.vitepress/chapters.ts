@@ -62,7 +62,7 @@ export const parts: Part[] = [
         topics: ['Wi-Fi and cellular: where the latency comes from', 'Radio states and the slow first request', 'NAT and carrier-grade NAT', 'IPv6-only mobile networks: NAT64, 464XLAT', 'Happy Eyeballs and network switches'],
       },
       {
-        id: 'internet-routing', num: '9', title: 'Internet Routing', link: '/internet/internet-routing', ready: false,
+        id: 'internet-routing', num: '9', title: 'Internet Routing', link: '/internet/internet-routing', ready: true,
         topics: ['Autonomous systems and BGP', 'Transit, peering and internet exchanges', 'Anycast', 'Route leaks, hijacks and RPKI', 'Absorbing volumetric DDoS'],
       },
     ],
