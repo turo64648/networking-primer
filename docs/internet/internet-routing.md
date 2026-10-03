@@ -463,8 +463,8 @@ hours. YouTube fought back by announcing the `/24` and then two `/25`s, until PC
 ([RIPE NCC case study, 2008](https://www.ripe.net/publications/news/industry-developments/youtube-hijacking-a-ripe-ncc-ris-case-study))
 
 **Amazon Route 53, 2018: a hijack to steal cryptocurrency.** On 24 April 2018, for about two hours, eNet
-(AS10297) announced more-specific `/24`s from Amazon's Route 53 DNS address space. Hurricane Electric and
-others accepted them. Some users' resolvers then got answers from the attacker's DNS servers, which sent
+(AS10297) announced more-specific `/24`s from Amazon's Route 53 DNS address space. Hurricane Electric passed
+them on; several other carriers rejected them. Some users' resolvers then got answers from the attacker's DNS servers, which sent
 `myetherwallet.com` to a phishing site. The site had an invalid TLS certificate; users who clicked past
 the warning lost cryptocurrency. **Lesson:** a hijack of a DNS provider redirects every site it serves, and
 TLS certificate checks are the last line of defence.
@@ -473,7 +473,7 @@ TLS certificate checks are the last line of defence.
 **Verizon, 2019: a route leak through a customer.** On 24 June 2019, a small ISP's "BGP optimizer" tool
 created more-specific routes for many networks' prefixes, including Cloudflare's. A customer of that ISP
 leaked them to Verizon, which accepted and spread them. Traffic for large parts of the internet funnelled
-through small networks that could not carry it, for about two hours. **Lesson:** filter customers'
+through small networks that could not carry it, for hours. **Lesson:** filter customers'
 announcements, and never let route-generating tools speak to the outside world.
 ([Cloudflare, 2019](https://blog.cloudflare.com/how-verizon-and-a-bgp-optimizer-knocked-large-parts-of-the-internet-offline-today/))
 
@@ -485,8 +485,8 @@ turns redundancy into a single switch.
 ([Facebook engineering, 2021](https://engineering.fb.com/2021/10/05/networking-traffic/outage-details/))
 
 **GitHub, 2018: memcached amplification.** On 28 February 2018, GitHub received an attack peaking at about
-1.35 Tbit/s, made of amplified memcached replies. It moved its traffic to its scrubbing provider, Akamai
-Prolexic, by changing BGP announcements, and the attack was mitigated within about ten minutes. **Lesson:**
+1.35 Tbit/s, made of amplified memcached replies. It moved its traffic to its scrubbing provider, Akamai,
+by withdrawing its BGP announcements from its transit providers, and the attack was mitigated within about ten minutes. **Lesson:**
 have a tested, fast path to diverting traffic through scrubbing before you need it.
 ([GitHub, 2018](https://github.blog/news-insights/company-news/ddos-incident-report/))
 
