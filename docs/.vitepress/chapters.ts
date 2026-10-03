@@ -92,11 +92,11 @@ export const parts: Part[] = [
     title: 'V. Behind the Edge',
     chapters: [
       {
-        id: 'edge-to-origin', num: '14', title: 'Edge to Origin', link: '/backend/edge-to-origin', ready: false,
+        id: 'edge-to-origin', num: '14', title: 'Edge to Origin', link: '/backend/edge-to-origin', ready: true,
         topics: ['Private WANs vs the public internet', 'Traffic engineering on the backbone', 'Split TCP and warm connections to origin', 'Choosing an origin region', 'Securing the edge-to-origin hop'],
       },
       {
-        id: 'datacenter-fabric', num: '15', title: 'The Datacenter Fabric', link: '/backend/datacenter-fabric', ready: false,
+        id: 'datacenter-fabric', num: '15', title: 'The Datacenter Fabric', link: '/backend/datacenter-fabric', ready: true,
         topics: ['Clos (leaf-spine) topologies', 'BGP inside the datacenter', 'ECMP, hashing and elephant flows', 'Overlays: VXLAN', 'MTU and encapsulation overhead'],
       },
       {
