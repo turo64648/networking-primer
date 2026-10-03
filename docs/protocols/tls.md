@@ -243,8 +243,8 @@ organisation, but browsers stopped showing that difference in the address bar ar
 
 ### Chains and trust stores
 
-Phones and browsers ship with a list of about a hundred-odd trusted **root** certificates, the
-**trust store**. Roots are kept offline and rarely used. Instead, a root signs a few **intermediate**
+Phones and browsers ship with a list of trusted **root** certificates, the **trust store**. It holds on the
+order of a hundred or more, and the exact list varies by platform. Roots are kept offline and rarely used. Instead, a root signs a few **intermediate**
 certificates, and intermediates sign site certificates. The list from the site certificate up to a root is
 the <Term id="certificate-chain">certificate chain</Term>.
 

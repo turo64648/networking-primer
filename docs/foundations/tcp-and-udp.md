@@ -44,7 +44,7 @@ The 4-tuple matters far beyond TCP itself:
 
 - **Load balancers hash it** to keep all packets of one connection on the same backend
   ([chapter 11](/edge/l4-load-balancing)).
-- **NAT devices rewrite it**, swapping private addresses and ports for public ones
+- **NAT (network address translation) devices rewrite it**, swapping private addresses and ports for public ones
   ([chapter 8](/internet/last-mile)).
 - **A client can run out of ports.** A proxy talking to one backend address can open only as many
   connections as it has free local ports, a few tens of thousands by default.
@@ -459,7 +459,7 @@ of the following:
 So whatever an application needs from that list, it must build itself. Who uses UDP, and why:
 
 - <Term id="dns">DNS</Term> sends one small question and one small answer. A handshake would double the cost,
-  and the client can simply ask again if no answer comes ([chapter 4](/protocols/dns)).
+  and the client can ask again if no answer comes ([chapter 4](/protocols/dns)).
 - **Voice, video calls and games** prefer a late packet dropped to a stall. A frame of audio that arrives
   after its playback time is useless, so retransmitting it in order, as TCP would, only adds delay.
 - <Term id="quic">QUIC</Term>, the transport under HTTP/3, builds reliability, congestion control and
@@ -522,8 +522,8 @@ recovery code parses data that any remote peer controls, so it is security-criti
 **Linux challenge ACKs, 2016: a counter that leaked connections.** Researchers showed in 2016 that Linux's
 implementation of a TCP anti-spoofing defence (RFC 5961) used one global limit on a type of reply, shared by
 all connections. By watching that shared counter, an attacker off the path could infer whether two hosts had
-a connection, guess its sequence numbers, and inject data or reset it (CVE-2016-5696). The fix randomised the
-limit. **Lesson:** shared state across connections can leak what TCP's random sequence numbers are meant to
+a connection, guess its sequence numbers, and inject data or reset it (CVE-2016-5696). The Linux fix made the
+limit less predictable. **Lesson:** shared state across connections can leak what TCP's random sequence numbers are meant to
 hide. ([USENIX Security paper, 2016](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/cao))
 
 ## Interview questions
