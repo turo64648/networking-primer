@@ -143,7 +143,7 @@ export const parts: Part[] = [
         topics: ['VPNs and what they change on the path', 'MASQUE and two-hop privacy relays', 'Effects on steering, geolocation and abuse handling'],
       },
       {
-        id: 'push-and-realtime', num: 'E3', title: 'Push & Real-Time to Phones', link: '/extras/push-and-realtime', ready: false,
+        id: 'push-and-realtime', num: 'E3', title: 'Push & Real-Time to Phones', link: '/extras/push-and-realtime', ready: true,
         topics: ['Why phones cannot keep many connections open', 'The push relay pattern (APNs, FCM)', 'Long-lived connections at scale'],
       },
     ],
