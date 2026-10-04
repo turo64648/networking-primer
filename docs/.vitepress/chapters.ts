@@ -126,7 +126,7 @@ export const parts: Part[] = [
         topics: ['…you open a URL on your phone (cold)', '…the connection is already warm', '…the CDN has it, and when it does not', '…a region fails', '…a deploy happens mid-request'],
       },
       {
-        id: 'question-bank', num: 'A', title: 'Interview Question Bank', link: '/extras/question-bank', ready: false,
+        id: 'question-bank', num: 'A', title: 'Interview Question Bank', link: '/extras/question-bank', ready: true,
         topics: ['All questions, indexed by chapter', 'Design and debugging curveballs'],
       },
     ],
