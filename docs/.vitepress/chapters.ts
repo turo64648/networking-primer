@@ -135,7 +135,7 @@ export const parts: Part[] = [
     title: 'Extras',
     chapters: [
       {
-        id: 'global-edge-design', num: 'E1', title: 'Designing a Global Edge', link: '/extras/global-edge-design', ready: false,
+        id: 'global-edge-design', num: 'E1', title: 'Designing a Global Edge', link: '/extras/global-edge-design', ready: true,
         topics: ['A system design walkthrough', 'Requirements, capacity and PoP placement', 'Steering, balancing and caching choices', 'Failure handling', 'How interviewers probe it'],
       },
       {
