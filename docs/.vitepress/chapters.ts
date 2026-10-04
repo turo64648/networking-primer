@@ -139,7 +139,7 @@ export const parts: Part[] = [
         topics: ['A system design walkthrough', 'Requirements, capacity and PoP placement', 'Steering, balancing and caching choices', 'Failure handling', 'How interviewers probe it'],
       },
       {
-        id: 'privacy-relays', num: 'E2', title: 'Privacy Relays & VPNs', link: '/extras/privacy-relays', ready: false,
+        id: 'privacy-relays', num: 'E2', title: 'Privacy Relays & VPNs', link: '/extras/privacy-relays', ready: true,
         topics: ['VPNs and what they change on the path', 'MASQUE and two-hop privacy relays', 'Effects on steering, geolocation and abuse handling'],
       },
       {
